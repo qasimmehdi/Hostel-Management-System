@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HostelManagment.Models.Payment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.Partial("SearchView")
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Allocation_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Allocation_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new {id = item.Payment_ID /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Payment_ID /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

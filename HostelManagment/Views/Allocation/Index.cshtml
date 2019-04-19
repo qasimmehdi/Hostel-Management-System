@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HostelManagment.Models.S_Allocation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.Partial("SearchView")
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Allocation_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Start_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.End_Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Allocation_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Start_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.End_Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id=item.Allocation_ID/* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Allocation_ID/* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

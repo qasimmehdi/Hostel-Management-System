@@ -1,0 +1,86 @@
+﻿@model IEnumerable<HostelManagment.Models.Students>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+
+@Html.Partial("SearchView")
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.S_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_FatherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_University)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address_of_Origin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City_of_Origin)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_FatherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_University)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address_of_Origin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City_of_Origin)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id = item.S_ID/* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.S_ID/* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

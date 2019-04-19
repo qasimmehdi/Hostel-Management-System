@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HostelManagment.Models.Canteen>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+@using (Html.BeginForm())
+{
+    <input type="text" name="id" placeholder="Search" />
+    <input type="submit" />
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Canteen_MGR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Canteen_Expenses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time_O)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time_C)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Canteen_MGR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Canteen_Expenses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time_O)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time_C)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id = item.Canteen_MGR /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Canteen_MGR /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
