@@ -15,6 +15,20 @@ namespace HostelManagment.Models
         public string Start_Date { get; set; }
         public string End_Date { get; set; }
 
+
+        public static List<S_Allocation> ab1 = new List<S_Allocation>();
+        public void dropdown1()
+        {
+            ab1.Clear();
+            SqlCommand a = new SqlCommand("select * from S_Allocation", Connection.get());
+            SqlDataReader aa = a.ExecuteReader();
+            while (aa.Read())
+            {
+                S_Allocation ao = new S_Allocation() { Allocation_ID = (int)aa[0] };
+                ab1.Add(ao);
+            }
+            aa.Close();
+        }
         public void Add()
         {
             string q = string.Format

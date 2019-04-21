@@ -14,6 +14,8 @@ namespace HostelManagment.Models
         public string Visitor_Name { get; set; }
         public int Times_Visited { get; set; }
 
+
+
         public void Add()
         {
             string q = string.Format

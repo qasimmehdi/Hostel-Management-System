@@ -13,6 +13,23 @@ namespace HostelManagment.Models
         public int Capacity { get; set; }
         public int Building_ID { get; set; }
 
+
+        public static List<Room> ab1 = new List<Room>();
+        public void dropdown1()
+        {
+            ab1.Clear();
+            SqlCommand a = new SqlCommand("select * from Room", Connection.get());
+            SqlDataReader aa = a.ExecuteReader();
+            while (aa.Read())
+            {
+                Room ao = new Room() { Room_ID = (int)aa[0] };
+                ab1.Add(ao);
+            }
+            aa.Close();
+
+        }
+
+
         public void Add()
         {
             string q = string.Format

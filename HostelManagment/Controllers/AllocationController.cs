@@ -13,6 +13,8 @@ namespace HostelManagment.Controllers
 
         public ActionResult Add()
         {
+            new Students().dropdown1();
+            new Room().dropdown1();
             return View();
         }
 
@@ -38,6 +40,8 @@ namespace HostelManagment.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
+            new Students().dropdown1();
+            new Room().dropdown1();
             TempData["id"] = id;
             return View(new S_Allocation().UpItem(id));
         }

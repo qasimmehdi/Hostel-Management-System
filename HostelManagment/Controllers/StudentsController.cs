@@ -12,6 +12,7 @@ namespace HostelManagment.Controllers
         // GET: Students
         public ActionResult Add()
         {
+            new Login().dropdown1();
             return View();
         }
 

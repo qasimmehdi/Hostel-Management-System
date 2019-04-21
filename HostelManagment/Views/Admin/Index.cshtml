@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HostelManagment.Models.Admin>
+
+@Html.Partial("SearchView")
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.A_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_Password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new {id=item.A_ID /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.A_ID /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

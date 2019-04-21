@@ -21,6 +21,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Room_ID)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Furniture_Type)
+        </th>
         <th></th>
     </tr>
 
@@ -32,6 +35,9 @@
         
         <td>
             @Html.DisplayFor(modelItem => item.Room_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Furniture_Type)
         </td>
         <td>
             @Html.ActionLink("Edit", "Update", new { id = item.Furniture_ID /* id=item.PrimaryKey */ }) |

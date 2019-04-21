@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HostelManagment.Models.Login>
+
+@Html.Partial("SearchView")
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.S_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.S_Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.S_Password)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id = item.S_ID /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.S_ID/* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

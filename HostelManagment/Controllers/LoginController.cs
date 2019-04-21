@@ -7,54 +7,54 @@ using HostelManagment.Models;
 
 namespace HostelManagment.Controllers
 {
-    public class PaymentController : Controller
+    public class LoginController : Controller
     {
-        // GET: Fee
+        // GET: Login
         public ActionResult Add()
         {
-            new S_Allocation().dropdown1();
+            
             return View();
         }
 
         [HttpPost]
-        public ActionResult Add(Payment u)
+        public ActionResult Add(Login u)
         {
             u.Add();
             return View();
         }
-
         [HttpGet]
         public ActionResult Index()
         {
-            return View(new Payment().ShowAll());
+            return View(new Login().ShowAll());
         }
 
         [HttpPost]
         public ActionResult Index(int id)
         {
-            return View(new Payment().Search(id));
+            return View(new Login().Search(id));
         }
 
 
         [HttpGet]
         public ActionResult Update(int id)
         {
-            new S_Allocation().dropdown1();
+            new Students().dropdown1();
+            new Room().dropdown1();
             TempData["id"] = id;
-            return View(new Payment().UpItem(id));
+            return View(new Login().UpItem(id));
         }
 
         [HttpPost]
-        public ActionResult Update(Payment Update_User)
+        public ActionResult Update(Login Update_User)
         {
-            Update_User.Payment_ID = (int)TempData["id"];
+            Update_User.S_ID = (int)TempData["id"];
             Update_User.update();
             return RedirectToAction("Index");
         }
 
         public ActionResult Delete(int id)
         {
-            new Payment().Delete(id);
+            new Login().Delete(id);
             return RedirectToAction("Index");
         }
     }

@@ -13,6 +13,8 @@ namespace HostelManagment.Models
         public int Payment_ID { get; set; }
         public int Allocation_ID { get; set; }
         public string Status { get; set; }
+
+        public static List<string> ab = new List<string>(3) { "Paid", "Unpaid" };
         public void Add()
         {
             string q = string.Format

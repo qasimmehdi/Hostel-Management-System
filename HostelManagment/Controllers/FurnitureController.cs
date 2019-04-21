@@ -12,6 +12,7 @@ namespace HostelManagment.Controllers
         // GET: Furniture
         public ActionResult Add()
         {
+            new Room().dropdown1();     //isse room id ka dropdown bnaega
             return View();
         }
 
@@ -38,6 +39,7 @@ namespace HostelManagment.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
+            new Room().dropdown1();     //isse room id ka dropdown bnaega
             TempData["id"] = id;
             return View(new Furniture().UpItem(id));
         }

@@ -12,6 +12,7 @@ namespace HostelManagment.Controllers
         // GET: Employees
         public ActionResult Add()
         {
+            new Hostel().dropdown1();
             return View();
         }
 
@@ -38,6 +39,7 @@ namespace HostelManagment.Controllers
         [HttpGet]
         public ActionResult Update(int id)
         {
+            new Hostel().dropdown1();
             TempData["id"] = id;
             return View(new Employees().UpItem(id));
         }

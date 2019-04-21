@@ -18,6 +18,21 @@ namespace HostelManagment.Models
         public int Age { get; set; }
         public string Address_of_Origin { get; set; }
         public string City_of_Origin { get; set; }
+        public string DropdownProperty => $"{S_ID} | {S_Name}";
+
+        public static List<Students> ab1 = new List<Students>();
+        public void dropdown1()
+        {
+            ab1.Clear();
+            SqlCommand a = new SqlCommand("select * from Students", Connection.get());
+            SqlDataReader aa = a.ExecuteReader();
+            while (aa.Read())
+            {
+                Students ao = new Students() { S_ID = (int)aa[0], S_Name = (string)aa[1]};
+                ab1.Add(ao);
+            }
+            aa.Close();
+        }
 
 
         public void Add()

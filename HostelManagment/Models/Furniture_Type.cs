@@ -12,6 +12,21 @@ namespace HostelManagment.Models
         public int Furniture_ID { get; set; }
         public string Furniture_Type { get; set; }
 
+       public static List<Furniture_type> ab = new List<Furniture_type>();
+        public void dropdown1()
+        {
+            ab.Clear();
+            SqlCommand a = new SqlCommand("select * from Furniture_Type",Connection.get());
+            SqlDataReader aa =a.ExecuteReader();
+            while (aa.Read())
+            {
+                Furniture_type ao = new Furniture_type() {Furniture_ID = (int)aa[0], Furniture_Type = (string)aa[1]};
+                ab.Add(ao);
+            }
+            aa.Close();
+            
+        }
+
         public void Add()
         {
             string q = string.Format

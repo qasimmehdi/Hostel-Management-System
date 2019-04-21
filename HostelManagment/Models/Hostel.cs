@@ -17,6 +17,20 @@ namespace HostelManagment.Models
         public string City { get; set; }
         public string Building_Name { get; set; }
 
+
+        public static List<Hostel> ab1 = new List<Hostel>();
+        public void dropdown1()
+        {
+            ab1.Clear();
+            SqlCommand a = new SqlCommand("select * from Hostel", Connection.get());
+            SqlDataReader aa = a.ExecuteReader();
+            while (aa.Read())
+            {
+                Hostel ao = new Hostel() { Building_ID = (int)aa[0] };
+                ab1.Add(ao);
+            }
+            aa.Close();
+        }
         public void Add()
         {
             string q = string.Format
