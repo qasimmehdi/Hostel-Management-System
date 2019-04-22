@@ -10,6 +10,7 @@ namespace HostelManagment.Controllers
     public class RoomController : Controller
     {
         // GET: Room
+        [Authorize]
         public ActionResult Add()
         {
             new Hostel().dropdown1();

@@ -15,5 +15,10 @@ namespace HostelManagment.Controllers
             
             return View();
         }
+        public ActionResult add()
+        {
+
+            return View();
+        }
     }
 }

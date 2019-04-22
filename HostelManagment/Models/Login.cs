@@ -16,6 +16,24 @@ namespace HostelManagment.Models
 
 
         public static List<Login> ab1 = new List<Login>();
+
+        public bool check()
+        {
+            bool oo = false;
+            SqlCommand a = new SqlCommand("select S_Email,S_Password from Login", Connection.get());
+            SqlDataReader ab = a.ExecuteReader();
+            while (ab.Read())
+            {
+                if (ab[0].ToString() == S_Email && ab[1].ToString() == S_Password)
+                {
+                    oo = true;
+                }
+
+            }
+            ab.Close();
+            return oo;
+        }
+
         public void dropdown1()
         {
             ab1.Clear();

@@ -10,6 +10,7 @@ namespace HostelManagment.Controllers
     public class PaymentController : Controller
     {
         // GET: Fee
+        [Authorize]
         public ActionResult Add()
         {
             new S_Allocation().dropdown1();

@@ -10,6 +10,7 @@ namespace HostelManagment.Controllers
     public class HostelController : Controller
     {
         // GET: Hostel
+        [Authorize]
         public ActionResult Add()
         {
             return View();

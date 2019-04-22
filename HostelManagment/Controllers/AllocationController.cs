@@ -10,7 +10,7 @@ namespace HostelManagment.Controllers
     public class AllocationController : Controller
     {
         // GET: Allocation
-
+        [Authorize]
         public ActionResult Add()
         {
             new Students().dropdown1();

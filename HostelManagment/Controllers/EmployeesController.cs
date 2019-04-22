@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HostelManagment.Models;
+using System.Web.Security;
 
 namespace HostelManagment.Controllers
 {
+    [Authorize]
+    [HandleError]
     public class EmployeesController : Controller
     {
         // GET: Employees
@@ -24,6 +27,7 @@ namespace HostelManagment.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(new Employees().ShowAll());
